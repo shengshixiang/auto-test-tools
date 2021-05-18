@@ -42,6 +42,8 @@ public:
     QLabel *label_7;
     QLineEdit *m_serverPortLineEdit_3;
     QPushButton *pushButton_3;
+    QLabel *label_8;
+    QLabel *label_9;
 
     void setupUi(QDialog *SocketTCPClient)
     {
@@ -110,7 +112,13 @@ public:
         m_serverPortLineEdit_3->setGeometry(QRect(280, 30, 81, 20));
         pushButton_3 = new QPushButton(groupBox_2);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
-        pushButton_3->setGeometry(QRect(150, 90, 75, 23));
+        pushButton_3->setGeometry(QRect(40, 90, 91, 23));
+        label_8 = new QLabel(groupBox_2);
+        label_8->setObjectName(QStringLiteral("label_8"));
+        label_8->setGeometry(QRect(180, 90, 101, 21));
+        label_9 = new QLabel(groupBox_2);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(290, 90, 101, 21));
 
         retranslateUi(SocketTCPClient);
 
@@ -137,6 +145,8 @@ public:
         label_7->setText(QApplication::translate("SocketTCPClient", "run time(min):", nullptr));
         m_serverPortLineEdit_3->setText(QApplication::translate("SocketTCPClient", "225", nullptr));
         pushButton_3->setText(QApplication::translate("SocketTCPClient", "set", nullptr));
+        label_8->setText(QApplication::translate("SocketTCPClient", "remain time:", nullptr));
+        label_9->setText(QApplication::translate("SocketTCPClient", "0min", nullptr));
     } // retranslateUi
 
 };
