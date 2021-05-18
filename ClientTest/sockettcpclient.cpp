@@ -36,6 +36,11 @@ SocketTCPClient::~SocketTCPClient()
 
 void SocketTCPClient::on_m_connectServerBtn_clicked()
 {
+    if(SocketTCPClient::connect_status==1)
+    {
+        QMessageBox::information(this, "QT网络通信", "已经连接");
+        return;
+    }
     mp_clientSocket = new QTcpSocket();
 
     QString ip = ui->m_serverIPLineEdit->text();\
@@ -48,14 +53,32 @@ void SocketTCPClient::on_m_connectServerBtn_clicked()
         QMessageBox::information(this, "QT网络通信", "连接服务端失败！");
         return;
     }
+    else {
+         QMessageBox::information(this, "QT网络通信", "连接服务端成功！");
+         SocketTCPClient::connect_status=1;
+    }
 
     //当有消息到达时，会触发信号 SIGNAL:readyRead(), 此时就会调用槽函数ClientRecvData()
      connect(mp_clientSocket, SIGNAL(readyRead()), this, SLOT(ClientRecvData()));
 
 }
+void SocketTCPClient::on_m_connectServerBtn_2_clicked()  //disconnect server
+{
+    if(SocketTCPClient::connect_status==0)
+    {
+        QMessageBox::information(this, "QT网络通信", "please connect server first");
+        return;
+    }
+    mp_clientSocket->disconnectFromHost();
+    SocketTCPClient::connect_status=0;
+    QMessageBox::information(this, "QT网络通信", "disconnect successed");
+
+
+}
 
 void SocketTCPClient::on_pushButton_2_clicked()
 {
+
     //获取TextEdit控件中的内容
     QString sendMsg = ui->m_sendTextEdit->toPlainText();
 
@@ -92,7 +115,11 @@ void SocketTCPClient::on_pushButton_3_clicked() //setting function
 {
     //获取TextEdit控件中的内容
   // QString sendMsg = ui->m_sendTextEdit->toPlainText();
-
+    if(SocketTCPClient::connect_status==0)
+     {
+            QMessageBox::information(this, "QT网络通信", "please connect server first");
+            return;
+     }
     QString sendMsg_freq = ui->comboBox->currentText();
     QString sendMsg_run_time = ui->m_serverPortLineEdit_3->text();
     QString sendMsg=sendMsg_freq+"_"+sendMsg_run_time;
@@ -172,5 +199,6 @@ void SocketTCPClient::sleep(int msec)
     QTime reachTime = QTime::currentTime().addMSecs(msec);
     while(QTime::currentTime()<reachTime);
 }
+
 
 

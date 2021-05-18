@@ -18,6 +18,7 @@ public:
     ~SocketTCPClient();
     int current_time_s=0;
     int setting_time_s=0;
+    int connect_status=0;
     
 private slots:
     void on_m_connectServerBtn_clicked();
@@ -30,6 +31,8 @@ private slots:
     void handleTimeout();  //超时处理函数
     void envir_temper_read();
     void sleep(int msec);
+    void on_m_connectServerBtn_2_clicked();
+
 private:
     Ui::SocketTCPClient *ui;
 
