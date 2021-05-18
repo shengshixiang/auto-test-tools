@@ -44,27 +44,34 @@ public:
     QPushButton *pushButton_3;
     QLabel *label_8;
     QLabel *label_9;
+    QPushButton *pushButton_4;
+    QGroupBox *groupBox_3;
+    QLabel *label_10;
+    QLabel *label_11;
+    QLabel *label_12;
+    QLabel *label_13;
 
     void setupUi(QDialog *SocketTCPClient)
     {
         if (SocketTCPClient->objectName().isEmpty())
             SocketTCPClient->setObjectName(QStringLiteral("SocketTCPClient"));
         SocketTCPClient->resize(1064, 539);
+        SocketTCPClient->setStyleSheet(QStringLiteral("background-color: rgb(213, 213, 215);"));
         label_3 = new QLabel(SocketTCPClient);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(670, 440, 54, 12));
+        label_3->setGeometry(QRect(470, 400, 81, 31));
         m_sendTextEdit = new QTextEdit(SocketTCPClient);
         m_sendTextEdit->setObjectName(QStringLiteral("m_sendTextEdit"));
-        m_sendTextEdit->setGeometry(QRect(420, 350, 191, 71));
+        m_sendTextEdit->setGeometry(QRect(540, 280, 191, 71));
         label_4 = new QLabel(SocketTCPClient);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(350, 380, 54, 12));
+        label_4->setGeometry(QRect(430, 300, 81, 21));
         m_recvTextEdit_2 = new QTextEdit(SocketTCPClient);
         m_recvTextEdit_2->setObjectName(QStringLiteral("m_recvTextEdit_2"));
-        m_recvTextEdit_2->setGeometry(QRect(420, 430, 191, 71));
+        m_recvTextEdit_2->setGeometry(QRect(610, 390, 191, 71));
         pushButton_2 = new QPushButton(SocketTCPClient);
         pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
-        pushButton_2->setGeometry(QRect(620, 350, 75, 23));
+        pushButton_2->setGeometry(QRect(770, 270, 75, 23));
         label_5 = new QLabel(SocketTCPClient);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(330, 0, 471, 81));
@@ -77,6 +84,8 @@ public:
         groupBox = new QGroupBox(SocketTCPClient);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(40, 90, 271, 151));
+        groupBox->setStyleSheet(QLatin1String("background-color: rgb(240, 240, 240);\n"
+"border-color: rgb(134, 146, 154);"));
         m_serverIPLineEdit = new QLineEdit(groupBox);
         m_serverIPLineEdit->setObjectName(QStringLiteral("m_serverIPLineEdit"));
         m_serverIPLineEdit->setGeometry(QRect(60, 40, 191, 20));
@@ -94,7 +103,8 @@ public:
         m_connectServerBtn->setGeometry(QRect(110, 120, 75, 23));
         groupBox_2 = new QGroupBox(SocketTCPClient);
         groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-        groupBox_2->setGeometry(QRect(480, 90, 391, 131));
+        groupBox_2->setGeometry(QRect(320, 90, 391, 151));
+        groupBox_2->setStyleSheet(QStringLiteral("background-color: rgb(134, 146, 154);"));
         label_6 = new QLabel(groupBox_2);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(20, 30, 41, 21));
@@ -106,19 +116,38 @@ public:
         comboBox->setGeometry(QRect(60, 20, 83, 32));
         label_7 = new QLabel(groupBox_2);
         label_7->setObjectName(QStringLiteral("label_7"));
-        label_7->setGeometry(QRect(170, 30, 101, 21));
+        label_7->setGeometry(QRect(160, 10, 101, 21));
         m_serverPortLineEdit_3 = new QLineEdit(groupBox_2);
         m_serverPortLineEdit_3->setObjectName(QStringLiteral("m_serverPortLineEdit_3"));
-        m_serverPortLineEdit_3->setGeometry(QRect(280, 30, 81, 20));
+        m_serverPortLineEdit_3->setGeometry(QRect(280, 10, 81, 20));
         pushButton_3 = new QPushButton(groupBox_2);
         pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
         pushButton_3->setGeometry(QRect(40, 90, 91, 23));
         label_8 = new QLabel(groupBox_2);
         label_8->setObjectName(QStringLiteral("label_8"));
-        label_8->setGeometry(QRect(180, 90, 101, 21));
+        label_8->setGeometry(QRect(170, 40, 91, 21));
         label_9 = new QLabel(groupBox_2);
         label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(290, 90, 101, 21));
+        label_9->setGeometry(QRect(280, 40, 101, 21));
+        pushButton_4 = new QPushButton(groupBox_2);
+        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButton_4->setGeometry(QRect(200, 90, 91, 23));
+        groupBox_3 = new QGroupBox(SocketTCPClient);
+        groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
+        groupBox_3->setGeometry(QRect(40, 270, 221, 111));
+        groupBox_3->setStyleSheet(QStringLiteral("background-color: rgb(134, 146, 154);"));
+        label_10 = new QLabel(groupBox_3);
+        label_10->setObjectName(QStringLiteral("label_10"));
+        label_10->setGeometry(QRect(10, 30, 151, 31));
+        label_11 = new QLabel(groupBox_3);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(160, 30, 121, 31));
+        label_12 = new QLabel(groupBox_3);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(10, 60, 151, 31));
+        label_13 = new QLabel(groupBox_3);
+        label_13->setObjectName(QStringLiteral("label_13"));
+        label_13->setGeometry(QRect(160, 60, 121, 31));
 
         retranslateUi(SocketTCPClient);
 
@@ -144,9 +173,15 @@ public:
 
         label_7->setText(QApplication::translate("SocketTCPClient", "run time(min):", nullptr));
         m_serverPortLineEdit_3->setText(QApplication::translate("SocketTCPClient", "225", nullptr));
-        pushButton_3->setText(QApplication::translate("SocketTCPClient", "set", nullptr));
+        pushButton_3->setText(QApplication::translate("SocketTCPClient", "start", nullptr));
         label_8->setText(QApplication::translate("SocketTCPClient", "remain time:", nullptr));
         label_9->setText(QApplication::translate("SocketTCPClient", "0min", nullptr));
+        pushButton_4->setText(QApplication::translate("SocketTCPClient", "stop", nullptr));
+        groupBox_3->setTitle(QApplication::translate("SocketTCPClient", "temperature data", nullptr));
+        label_10->setText(QApplication::translate("SocketTCPClient", "current 485 temper:", nullptr));
+        label_11->setText(QApplication::translate("SocketTCPClient", "0\342\204\203", nullptr));
+        label_12->setText(QApplication::translate("SocketTCPClient", "current cpu temper:", nullptr));
+        label_13->setText(QApplication::translate("SocketTCPClient", "0\342\204\203", nullptr));
     } // retranslateUi
 
 };

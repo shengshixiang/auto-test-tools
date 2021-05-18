@@ -3,7 +3,8 @@
 
 #include <QDialog>
 #include <QTcpSocket>
-
+#include <QtSerialPort/QSerialPort>
+#include <QtSerialPort/QSerialPortInfo>
 namespace Ui {
 class SocketTCPClient;
 }
@@ -27,12 +28,14 @@ private slots:
 
     void on_pushButton_3_clicked();
     void handleTimeout();  //超时处理函数
-
+    void envir_temper_read();
+    void sleep(int msec);
 private:
     Ui::SocketTCPClient *ui;
 
     QTcpSocket *mp_clientSocket;
     QTimer *m_pTimer;
+     QSerialPort *serial;
 
 };
 

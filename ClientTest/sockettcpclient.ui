@@ -13,13 +13,16 @@
   <property name="windowTitle">
    <string>SocketTCPClient</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(213, 213, 215);</string>
+  </property>
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>670</x>
-     <y>440</y>
-     <width>54</width>
-     <height>12</height>
+     <x>470</x>
+     <y>400</y>
+     <width>81</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -29,8 +32,8 @@
   <widget class="QTextEdit" name="m_sendTextEdit">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>350</y>
+     <x>540</x>
+     <y>280</y>
      <width>191</width>
      <height>71</height>
     </rect>
@@ -39,10 +42,10 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>380</y>
-     <width>54</width>
-     <height>12</height>
+     <x>430</x>
+     <y>300</y>
+     <width>81</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="text">
@@ -52,8 +55,8 @@
   <widget class="QTextEdit" name="m_recvTextEdit_2">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>430</y>
+     <x>610</x>
+     <y>390</y>
      <width>191</width>
      <height>71</height>
     </rect>
@@ -62,8 +65,8 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>620</x>
-     <y>350</y>
+     <x>770</x>
+     <y>270</y>
      <width>75</width>
      <height>23</height>
     </rect>
@@ -101,6 +104,10 @@
      <width>271</width>
      <height>151</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(240, 240, 240);
+border-color: rgb(134, 146, 154);</string>
    </property>
    <property name="title">
     <string>connect target</string>
@@ -168,11 +175,14 @@
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>320</x>
      <y>90</y>
      <width>391</width>
-     <height>131</height>
+     <height>151</height>
     </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(134, 146, 154);</string>
    </property>
    <property name="title">
     <string>setting</string>
@@ -218,8 +228,8 @@
    <widget class="QLabel" name="label_7">
     <property name="geometry">
      <rect>
-      <x>170</x>
-      <y>30</y>
+      <x>160</x>
+      <y>10</y>
       <width>101</width>
       <height>21</height>
      </rect>
@@ -232,7 +242,7 @@
     <property name="geometry">
      <rect>
       <x>280</x>
-      <y>30</y>
+      <y>10</y>
       <width>81</width>
       <height>20</height>
      </rect>
@@ -251,15 +261,15 @@
      </rect>
     </property>
     <property name="text">
-     <string>set</string>
+     <string>start</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>180</x>
-      <y>90</y>
-      <width>101</width>
+      <x>170</x>
+      <y>40</y>
+      <width>91</width>
       <height>21</height>
      </rect>
     </property>
@@ -270,14 +280,95 @@
    <widget class="QLabel" name="label_9">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>90</y>
+      <x>280</x>
+      <y>40</y>
       <width>101</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>0min</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>90</y>
+      <width>91</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>stop</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>270</y>
+     <width>221</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(134, 146, 154);</string>
+   </property>
+   <property name="title">
+    <string>temperature data</string>
+   </property>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>current 485 temper:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>30</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0℃</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>60</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>current cpu temper:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_13">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>60</y>
+      <width>121</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0℃</string>
     </property>
    </widget>
   </widget>
