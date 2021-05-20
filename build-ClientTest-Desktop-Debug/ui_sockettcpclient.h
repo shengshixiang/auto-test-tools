@@ -84,7 +84,7 @@ public:
         pushButton_2->setGeometry(QRect(630, 340, 75, 23));
         label_5 = new QLabel(SocketTCPClient);
         label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(200, 0, 471, 81));
+        label_5->setGeometry(QRect(140, 0, 471, 81));
         QFont font;
         font.setPointSize(20);
         font.setBold(true);
@@ -205,7 +205,7 @@ public:
         label_3->setText(QApplication::translate("SocketTCPClient", "\345\217\221\351\200\201\345\206\205\345\256\271\357\274\232", nullptr));
         label_4->setText(QApplication::translate("SocketTCPClient", "\346\216\245\346\224\266\346\225\260\346\215\256\357\274\232", nullptr));
         pushButton_2->setText(QApplication::translate("SocketTCPClient", "\345\217\221\351\200\201", nullptr));
-        label_5->setText(QApplication::translate("SocketTCPClient", "EDATEC \346\270\251\345\272\246\350\207\252\345\212\250\346\265\213\350\257\225\345\267\245\345\205\267", nullptr));
+        label_5->setText(QApplication::translate("SocketTCPClient", "EDATEC \344\272\247\345\223\201\346\200\247\350\203\275&\346\225\243\347\203\255\350\207\252\345\212\250\346\265\213\350\257\225\345\267\245\345\205\267", nullptr));
         groupBox->setTitle(QApplication::translate("SocketTCPClient", "connect target", nullptr));
         label->setText(QApplication::translate("SocketTCPClient", "IP\357\274\232", nullptr));
         label_2->setText(QApplication::translate("SocketTCPClient", "\347\253\257\345\217\243\357\274\232", nullptr));
@@ -221,7 +221,7 @@ public:
         m_serverPortLineEdit_3->setText(QApplication::translate("SocketTCPClient", "225", nullptr));
         pushButton_3->setText(QApplication::translate("SocketTCPClient", "start", nullptr));
         label_8->setText(QApplication::translate("SocketTCPClient", "remain time:", nullptr));
-        label_9->setText(QApplication::translate("SocketTCPClient", "0min", nullptr));
+        label_9->setText(QApplication::translate("SocketTCPClient", "0 s", nullptr));
         pushButton_4->setText(QApplication::translate("SocketTCPClient", "stop", nullptr));
         radioButton->setText(QApplication::translate("SocketTCPClient", "load stress", nullptr));
         groupBox_3->setTitle(QApplication::translate("SocketTCPClient", "temperature data", nullptr));

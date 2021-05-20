@@ -108,7 +108,7 @@ void SocketTCPClient::ClientRecvData()
     }
 
     QString showQstr = recvMsg;
-    ui->label_13->setText(showQstr);
+    ui->label_13->setText(showQstr+"℃");
     ui->m_recvTextEdit_2->setText(showQstr);
 
 }
@@ -129,8 +129,9 @@ void SocketTCPClient::on_pushButton_3_clicked() //setting function
     {
         sendMsg_load_stress="_stress";
     }
-    QString sendMsg=sendMsg_freq+sendMsg_load_stress;
+    QString sendMsg="start_"+sendMsg_freq+sendMsg_load_stress;
     SocketTCPClient::setting_time_s=sendMsg_run_time.toInt()*60;
+    SocketTCPClient::current_time_s=0;
     //转换成字符串发送
     char sendMsgChar[1024] = {0};
     strcpy(sendMsgChar, sendMsg.toStdString().c_str());
@@ -149,9 +150,13 @@ void SocketTCPClient::handleTimeout()
     int time=0;
     SocketTCPClient::current_time_s++;
     time=SocketTCPClient::setting_time_s- SocketTCPClient::current_time_s;
-    ui->label_9->setNum(time);
+    ui->label_9->setText(QString::number(time)+"s");
 
+    if(time==0)
+    {
+        on_pushButton_4_clicked();
 
+    }
     qDebug()<<"current_time_s:"<< SocketTCPClient::current_time_s;
     //send command to read
 //    QString sendMsg="read_cpu_temp";
@@ -198,7 +203,7 @@ void SocketTCPClient::envir_temper_read()
     double tem_double = tem/10.00;
     double hum_double = hum/10.00;
   //  qDebug()<<tem_double;
-    ui->label_11->setText(QString::number(tem_double));
+    ui->label_11->setText(QString::number(tem_double)+"℃");
 
    // QString a = QString(buf);
 }
@@ -210,3 +215,22 @@ void SocketTCPClient::sleep(int msec)
 
 
 
+
+void SocketTCPClient::on_pushButton_4_clicked()    //stop
+{
+    m_pTimer->stop();
+    ui->label_9->setText("0s");
+    //转换成字符串发送
+    QString sendMsg="stop";
+    char sendMsgChar[1024] = {0};
+    strcpy(sendMsgChar, sendMsg.toStdString().c_str());
+
+    int sendRe = mp_clientSocket->write(sendMsgChar, strlen(sendMsgChar));
+
+    if(sendRe == -1)
+    {
+         QMessageBox::information(this, "QT网络通信", "向服务端发送数据失败！");
+         return;
+    }
+     QMessageBox::information(this, "QT网络通信", "测试停止");
+}

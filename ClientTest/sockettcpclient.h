@@ -33,6 +33,8 @@ private slots:
     void sleep(int msec);
     void on_m_connectServerBtn_2_clicked();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::SocketTCPClient *ui;
 

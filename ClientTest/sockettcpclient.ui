@@ -78,7 +78,7 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>140</x>
      <y>0</y>
      <width>471</width>
      <height>81</height>
@@ -93,7 +93,7 @@
     </font>
    </property>
    <property name="text">
-    <string>EDATEC 温度自动测试工具</string>
+    <string>EDATEC 产品性能&amp;散热自动测试工具</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
@@ -299,7 +299,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>0min</string>
+     <string>0 s</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
