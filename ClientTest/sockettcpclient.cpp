@@ -12,7 +12,7 @@ SocketTCPClient::SocketTCPClient(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->m_serverIPLineEdit->setText("192.168.1.101");
+    ui->m_serverIPLineEdit->setText("192.168.1.118");
     ui->m_serverPortLineEdit_2->setText("8080");
     m_pTimer = new QTimer(this);
     connect(m_pTimer, SIGNAL(timeout()), this, SLOT(handleTimeout()));
@@ -108,7 +108,9 @@ void SocketTCPClient::ClientRecvData()
     }
 
     QString showQstr = recvMsg;
+    ui->label_13->setText(showQstr);
     ui->m_recvTextEdit_2->setText(showQstr);
+
 }
 
 void SocketTCPClient::on_pushButton_3_clicked() //setting function
@@ -122,7 +124,12 @@ void SocketTCPClient::on_pushButton_3_clicked() //setting function
      }
     QString sendMsg_freq = ui->comboBox->currentText();
     QString sendMsg_run_time = ui->m_serverPortLineEdit_3->text();
-    QString sendMsg=sendMsg_freq+"_"+sendMsg_run_time;
+    QString sendMsg_load_stress = "";
+    if(ui->radioButton->isChecked())
+    {
+        sendMsg_load_stress="_stress";
+    }
+    QString sendMsg=sendMsg_freq+sendMsg_load_stress;
     SocketTCPClient::setting_time_s=sendMsg_run_time.toInt()*60;
     //转换成字符串发送
     char sendMsgChar[1024] = {0};
@@ -147,17 +154,18 @@ void SocketTCPClient::handleTimeout()
 
     qDebug()<<"current_time_s:"<< SocketTCPClient::current_time_s;
     //send command to read
-    QString sendMsg="read_cpu_temp";
-    char sendMsgChar[1024] = {0};
-    strcpy(sendMsgChar, sendMsg.toStdString().c_str());
+//    QString sendMsg="read_cpu_temp";
+//    char sendMsgChar[1024] = {0};
+//    strcpy(sendMsgChar, sendMsg.toStdString().c_str());
 
-    int sendRe = mp_clientSocket->write(sendMsgChar, strlen(sendMsgChar));
+//    int sendRe = mp_clientSocket->write(sendMsgChar, strlen(sendMsgChar));
 
-    if(sendRe == -1)
-    {
-         QMessageBox::information(this, "QT网络通信", "向服务端发送数据失败！");
-         return;
-    }
+//    if(sendRe == -1)
+//    {
+//         QMessageBox::information(this, "QT网络通信", "向服务端发送数据失败！");
+//         return;
+//    }
+
     unsigned char buf[8]={0x01, 0x03 ,0x00 ,0x00, 0x00 ,0x02 ,0xC4 ,0x0B};
     serial->write(reinterpret_cast<const char *>(buf), 8);
     serial->flush();

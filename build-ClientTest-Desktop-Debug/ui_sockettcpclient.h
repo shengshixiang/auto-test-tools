@@ -18,6 +18,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QTextEdit>
 
 QT_BEGIN_NAMESPACE
@@ -47,6 +48,7 @@ public:
     QLabel *label_8;
     QLabel *label_9;
     QPushButton *pushButton_4;
+    QRadioButton *radioButton;
     QGroupBox *groupBox_3;
     QLabel *label_10;
     QLabel *label_11;
@@ -67,13 +69,13 @@ public:
         SocketTCPClient->setStyleSheet(QStringLiteral("background-color: rgb(222, 221, 221);   "));
         label_3 = new QLabel(SocketTCPClient);
         label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(340, 340, 81, 31));
+        label_3->setGeometry(QRect(340, 280, 81, 31));
         m_sendTextEdit = new QTextEdit(SocketTCPClient);
         m_sendTextEdit->setObjectName(QStringLiteral("m_sendTextEdit"));
         m_sendTextEdit->setGeometry(QRect(430, 270, 171, 51));
         label_4 = new QLabel(SocketTCPClient);
         label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(340, 290, 81, 21));
+        label_4->setGeometry(QRect(340, 350, 81, 21));
         m_recvTextEdit_2 = new QTextEdit(SocketTCPClient);
         m_recvTextEdit_2->setObjectName(QStringLiteral("m_recvTextEdit_2"));
         m_recvTextEdit_2->setGeometry(QRect(430, 330, 171, 51));
@@ -117,13 +119,13 @@ public:
         groupBox_2->setStyleSheet(QStringLiteral(""));
         label_6 = new QLabel(groupBox_2);
         label_6->setObjectName(QStringLiteral("label_6"));
-        label_6->setGeometry(QRect(10, 40, 41, 21));
+        label_6->setGeometry(QRect(10, 30, 41, 21));
         comboBox = new QComboBox(groupBox_2);
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QStringLiteral("comboBox"));
-        comboBox->setGeometry(QRect(50, 40, 83, 32));
+        comboBox->setGeometry(QRect(60, 30, 81, 21));
         label_7 = new QLabel(groupBox_2);
         label_7->setObjectName(QStringLiteral("label_7"));
         label_7->setGeometry(QRect(160, 30, 101, 21));
@@ -142,6 +144,9 @@ public:
         pushButton_4 = new QPushButton(groupBox_2);
         pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
         pushButton_4->setGeometry(QRect(220, 110, 91, 23));
+        radioButton = new QRadioButton(groupBox_2);
+        radioButton->setObjectName(QStringLiteral("radioButton"));
+        radioButton->setGeometry(QRect(20, 60, 119, 27));
         groupBox_3 = new QGroupBox(SocketTCPClient);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
         groupBox_3->setGeometry(QRect(40, 270, 221, 111));
@@ -218,6 +223,7 @@ public:
         label_8->setText(QApplication::translate("SocketTCPClient", "remain time:", nullptr));
         label_9->setText(QApplication::translate("SocketTCPClient", "0min", nullptr));
         pushButton_4->setText(QApplication::translate("SocketTCPClient", "stop", nullptr));
+        radioButton->setText(QApplication::translate("SocketTCPClient", "load stress", nullptr));
         groupBox_3->setTitle(QApplication::translate("SocketTCPClient", "temperature data", nullptr));
         label_10->setText(QApplication::translate("SocketTCPClient", "current 485 temper:", nullptr));
         label_11->setText(QApplication::translate("SocketTCPClient", "0\342\204\203", nullptr));
