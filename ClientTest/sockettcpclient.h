@@ -19,7 +19,11 @@ public:
     int current_time_s=0;
     int setting_time_s=0;
     int connect_status=0;
-    
+    int env_temp=0;
+    int env_temp_flag=0;
+    int cpu_temp=0;
+    int cpu_temp_flag=0;
+    void initChart();
 private slots:
     void on_m_connectServerBtn_clicked();
 
